@@ -2,9 +2,9 @@
 
   1. Create a Resource Group for the workshop
 
-## Creare Azure Kubernetes Service
+## Deploy Azure Kubernetes Service
 
-   1. Navigate to **Kubernetes services** and click **create**.
+   1. Navigate to **Kubernetes services** and hit **create**.
 
    2. Choose your subscription and Resource Group you just created.
 
@@ -23,9 +23,9 @@
    9. Click **review + create** 
     
     
-## Create a Container Registry (ACR)
+## Deploy a Container Registry (ACR)
 
-   1. Navigate to **Container registries** and click create.
+   1. Navigate to **Container registries** and hit create.
 
    2. Choose your subscription and Resource Group.
 
@@ -35,6 +35,37 @@
 
    5. Click **Review + create**
  
+ 
+## Deploy an Application Gateway V2
+
+  1. az aks update -n aksworkshop -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "Your new subnet CIDR"
+
+  1. Navigate to **Application Gateways** and hit **Create**.
+
+  2. Choose your subscription and Resource Group.
+
+  3. **Application gateway name** - appgwworkshop
+
+  4. **Region** - West Europe
+
+  5. **Tier** - WAF V2
+
+  6. **Enable autoscaling** - No
+
+  7. **Instance count** - 1
+
+  8. **WAF Policy** - Create new
+
+  9. **Vritual network** - **choose the virtual network of the kubernetes nodes**
+
+  9.1 **Hit Manage subnet configuration** - add a new subnet called "appgw", navigate back to the creation and choose the "appgw" subnet.
+  
+  10. Click Next and **add new public IP address**
+
+  11. **Add a new backend pool** - enter a name and **choose Yes for "Add backend pool without targets"**
+
+  12. 
+
 
 ## Build the containers images
 
