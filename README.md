@@ -36,3 +36,8 @@
    3.5 Click **Review + create**
  
     
+## Build the containers images
+
+  1. Open **Cloud Shell** on the Azure Portal.
+
+  2. Clone this repository - **git clone 
