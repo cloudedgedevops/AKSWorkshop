@@ -40,4 +40,5 @@
 
   1. Open **Cloud Shell** on the Azure Portal.
 
-  2. Clone this repository - **git clone 
+  2. Clone this repository - **git clone https://github.com/cloudedgedevops/AKSWorkshop.git**
+ 
