@@ -67,7 +67,7 @@
   12. 
 
 
-## Build the containers images
+## Build and push the containers images
 
   1. Open **Cloud Shell** on the Azure Portal.
 
@@ -205,3 +205,5 @@ You can use [Cloud Shell](https://shell.azure.com/) to install the AGIC Helm pac
 
 1. Check the log of the newly created pod to verify if it started properly
  
+ 
+## Dep[oy the application to the AKS cluster
