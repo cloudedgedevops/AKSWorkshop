@@ -217,4 +217,9 @@ You can use [Cloud Shell](https://shell.azure.com/) to install the AGIC Helm pac
 1. Check the log of the newly created pod to verify if it started properly
  
  
-## Dep[oy the application to the AKS cluster
+## Deploy the application to the AKS cluster
+
+1. run the command az aks get-credentials --resource-group YOURRESOURCEGROUP --name aksworkshop
+2. run kubectl apply -f aspnetapp.yaml
+3. run kubectl get ing
+4. browse to - http://YOURINGRESSIP:
