@@ -72,6 +72,16 @@
   1. Open **Cloud Shell** on the Azure Portal.
 
   2. Clone this repository - **git clone https://github.com/cloudedgedevops/AKSWorkshop.git**
+  
+  3. run Docker build -t <YOURREGISTRYNAME>.azurecr.io/aspnetapp:1.0
+  
+  4. run az acr login -n <YOURREGISTRYNAME>
+  
+  4. run docker push <YOURREGISTRYNAME>.azurecr.io/aspnetapp:1.0
+  
+  #Bonus - run the image as non root
+  
+  1. Edit the dockerfile to run as non root.
 
 
 ## Install Application Gateway Ingress Controller
