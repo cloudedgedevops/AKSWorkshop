@@ -13,6 +13,8 @@ RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained fal
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
+# RUN adduser --uid 8877 appuser
 WORKDIR /app
 COPY --from=build /app .
+# USER appuser
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
