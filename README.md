@@ -40,7 +40,7 @@
  
 ## Deploy an Application Gateway V2
 
-  1. az network public-ip create -n PublicIPName -g YOURRESOURCEGROUP --allocation-method Static --sku Standard
+  1. az network public-ip create -n PublicIPName -g YOURRESOURCEGROUP --allocation-method Static --sku Standard -l westeurope
 
   2. az network vnet subnet create -n agic --vnet-name AKSVNETNAME -g YOURRESOURCEGROUP --address-prefixes 10.242.0.0/16 (example, choose according you aks vnet adress space)
 
