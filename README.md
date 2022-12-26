@@ -61,6 +61,8 @@
   
   4. run docker push YOURREGISTRYNAME.azurecr.io/aspnetapp:1.0
   
+  5. or run az acr build . -r YOURREGISTRYNAME
+  
  
   ### Bonus - run the image as non root
   
