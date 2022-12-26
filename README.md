@@ -38,33 +38,11 @@
  
 ## Deploy an Application Gateway V2
 
-  1. az aks update -n aksworkshop -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "Your new subnet CIDR"
+  1. az network public-ip create -n PublicIPName -g YOURRESOURCEGROUP --allocation-method Static --sku Standard
 
-  1. Navigate to **Application Gateways** and hit **Create**.
+  2. az network vnet subnet create -n agic --vnet-name AKSVNETNAME -g YOURRESOURCEGROUP --address-prefixes 10.242.0.0/16 (example, choose according you aks vnet adress space)
 
-  2. Choose your subscription and Resource Group.
-
-  3. **Application gateway name** - appgwworkshop
-
-  4. **Region** - West Europe
-
-  5. **Tier** - WAF V2
-
-  6. **Enable autoscaling** - No
-
-  7. **Instance count** - 1
-
-  8. **WAF Policy** - Create new
-
-  9. **Vritual network** - **choose the virtual network of the kubernetes nodes**
-
-  9.1 **Hit Manage subnet configuration** - add a new subnet called "appgw", navigate back to the creation and choose the "appgw" subnet.
-  
-  10. Click Next and **add new public IP address**
-
-  11. **Add a new backend pool** - enter a name and **choose Yes for "Add backend pool without targets"**
-
-  12. 
+  3. az network application-gateway create -n APPGWNAME -l westeurope -g YOURRESOURCEGROUP --sku Standard_v2 --public-ip-address PublicIPName --vnet-name AKSVNETNAME --subnet agic --priority 100
 
 
 ## Build and push the containers images
@@ -86,6 +64,10 @@
 
 
 ## Install Application Gateway Ingress Controller
+
+  1. appgwId=$(az network application-gateway show -n APPGWNAME -g YOURRESOURCEGROUP -o tsv --query "id") 
+
+  2. az aks enable-addons -n myCluster -g myResourceGroup -a ingress-appgw --appgw-id $appgwId
 
 
 ### Set up AAD Pod Identity
