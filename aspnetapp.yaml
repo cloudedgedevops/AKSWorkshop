@@ -6,7 +6,8 @@ metadata:
     app: aspnetapp
 spec:
   containers:
-  - image: "mcr.microsoft.com/dotnet/core/samples:aspnetapp"
+  - image: YOURIMAGEURL
+  #mcr.microsoft.com/dotnet/core/samples:aspnetapp
     name: aspnetapp-image
     ports:
     - containerPort: 80
