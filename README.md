@@ -42,11 +42,11 @@
  
 ## Deploy an Application Gateway V2
 
-  1. az network public-ip create -n PublicIPName -g YOURRESOURCEGROUP --allocation-method Static --sku Standard -l westeurope
+  1. az network public-ip create -n PublicIPName -g AKSRESOURCEGROUP --allocation-method Static --sku Standard -l westeurope
 
-  2. az network vnet subnet create -n agic --vnet-name AKSVNETNAME -g YOURRESOURCEGROUP --address-prefixes 10.242.0.0/16 (example, choose according you aks vnet adress space)
+  2. az network vnet subnet create -n agic --vnet-name AKSVNETNAME -g AKSRESOURCEGROUP --address-prefixes 10.242.0.0/16 (example, choose according you aks vnet adress space)
 
-  3. az network application-gateway create -n APPGWNAME -l westeurope -g YOURRESOURCEGROUP --sku Standard_v2 --public-ip-address PublicIPName --vnet-name AKSVNETNAME --subnet agic --priority 100
+  3. az network application-gateway create -n APPGWNAME -l westeurope -g AKSRESOURCEGROUP --sku Standard_v2 --public-ip-address PublicIPName --vnet-name AKSVNETNAME --subnet agic --priority 100
 
 
 ## Build and push the containers images
