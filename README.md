@@ -20,9 +20,7 @@
 
    8. **Scale method** - Autoscale - min 1 Max 2
 
-   9. **Network configuration** - Azure CNI and than create new virtual network
-
-   10. Click **review + create** 
+   9. Click **review + create** 
    
    11. az aks update -g RESOURCEGROUPNAME -n aksworkshop --enable-managed-identity
     
