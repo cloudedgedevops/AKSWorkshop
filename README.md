@@ -34,6 +34,8 @@
    4. **SKU** - Basic.
 
    5. Click **Review + create**
+   
+   6. az aks update -n aksworkshop -g YOURRESOURCEGROUP --attach-acr YOURACRNAME
  
  
 ## Deploy an Application Gateway V2
@@ -202,8 +204,11 @@ You can use [Cloud Shell](https://shell.azure.com/) to install the AGIC Helm pac
 ## Deploy the application to the AKS cluster
 
 1. Run the command az aks get-credentials --resource-group YOURRESOURCEGROUP --name aksworkshop
-2. az aks update -n aksworkshop -g YOURRESOURCEGROUP --attach-acr YOURACRNAME
+
 3. Edit the aspnetapp.yaml to use the images you pushed to the ACR.
+
 3. Run kubectl apply -f aspnetapp.yaml
-4. Run kubectl get ing
+
+4. Run kubectl get ing - copy the external IP
+
 5. Browse to - http://YOURINGRESSIP:80
