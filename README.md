@@ -23,6 +23,8 @@
    9. **Network configuration** - Azure CNI and than create new virtual network
 
    10. Click **review + create** 
+   
+   11. az aks update -g RESOURCEGROUPNAME -n aksworkshop --enable-managed-identity
     
     
 ## Deploy a Container Registry (ACR)
