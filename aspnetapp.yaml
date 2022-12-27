@@ -8,6 +8,8 @@ spec:
   containers:
   - image: YOURIMAGEURL
   #mcr.microsoft.com/dotnet/core/samples:aspnetapp
+    securityContext:
+      runAsUser: 8877
     name: aspnetapp-image
     ports:
     - containerPort: 80
